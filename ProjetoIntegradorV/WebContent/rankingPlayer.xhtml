@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<title>Jogo da Velha - Ranking dos Jogadores</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>	
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" />
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" />
+	<link rel="stylesheet" href="css/stylePIV.css"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+</h:head>
+
+<h:body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <ul/>
+	  <img src="img/ranking-logo.png" width="200px" height="50px"/>
+	  <ul/>
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul style="margin-left: 650px;" class="navbar-nav mr-auto">
+	      <h:form id="formHome">
+		  	<h:commandLink style="margin-right: 5px;" class="btn btn-default" action="#{playerMB.redirectHome}">Página Inicial</h:commandLink>
+		  </h:form>
+	      <h:form id="formDownload">
+		  	<h:commandButton style="margin-right: 5px;" value="Download do APK" class="btn btn-default" ajax="false">
+		  		<p:fileDownload value="#{playerMB.file}"/>	
+		  	</h:commandButton>
+		  </h:form>
+	      <h:form id="formRanking">
+		      <h:commandLink style="margin-right: 5px;" styleClass="btn btn-default" action="#{playerMB.redirectRanking}">
+		      Ranking
+				<f:setPropertyActionListener target="#{playerMB.player}" value="#{p}" />
+			  </h:commandLink>
+		  </h:form>
+		  <h:form id="formPerfil">
+		      <h:commandLink style="margin-right: 5px;" styleClass="btn btn-default" action="#{playerMB.redirectPerfil}">
+		      Meu Perfil
+				<f:setPropertyActionListener target="#{playerMB.playerLogado}" value="#{p}" />
+			  </h:commandLink>
+		  </h:form>
+		  <h:form id="formLogout">
+		      <h:commandLink class="btn btn-default" action="#{playerMB.logoutAction}" >Sair</h:commandLink>
+		  </h:form>
+	    </ul>
+	  </div>
+	</nav>
+
+	<p:panel id="rankingTable">
+		<h:form>
+			<h:dataTable styleClass="table table-striped" var="p" value="#{playerMB.listPlayers}">
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="Número de Vitórias"/>
+					</f:facet>
+				   	<h:outputText value="#{p.totalWins}"/>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="Nome Completo"/>
+					</f:facet>
+				    <h:outputText value="#{p.name}"/>
+				</h:column> 
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="Nome de Usuário"/>
+					</f:facet>
+		 			<h:outputText value="#{p.username}"/>
+				</h:column>
+			</h:dataTable>
+			<div align="center" class="row"  style="margin-top: 10px;">
+				<div class="form-group col-md-2">
+					<h:commandLink styleClass="btn btn-outline-dark" value="Voltar" action="#{playerMB.redirectHome}"/>						
+				</div>
+				<div class="form-group col-md-10"></div>
+			</div>
+		</h:form>
+	</p:panel>
+
+	<ui:include src="inc/footer.xhtml"/>
+	<script src="js/jquery-3.3.1.slim.js"/>
+	<script src="js/popper.min.js"/>
+	<script src="js/bootstrap.min.js"/>
+</h:body>
+</html>

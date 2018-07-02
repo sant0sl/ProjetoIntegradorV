@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#index.xhtml" PATH="/index.xhtml"
+  SHAPE="456,208,50,41" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#index.xhtml:0" NAME="item"
+   PATH="/index.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="insertPlayer::#player#insertPlayer.xhtml"
+    NAME="output" PATH="/player/insertPlayer.xhtml"
+    TARGET="rules:#player#insertPlayer.xhtml" TITLE="insertPlayer" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#player#insertPlayer.xhtml"
+  PATH="/player/insertPlayer.xhtml" SHAPE="824,200,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+</PROCESS>

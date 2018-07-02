@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15279081929680" configfile="/ProjetoIntegradorV/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="554" y="562" id="pf15279905794360" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" outlinks="pf15279905794371 pf15280465273520 pf15280465273521" inlinks="pf15280465273522 pf15280465273523 pf15280465273524" path="index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="home.xhtml" x="338" y="178" id="pf15279905794372" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf15280465273522" inlinks="pf15279905794371" path="insertPlayer.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="recoveryPassword.xhtml" x="338" y="562" id="pf15280465273527" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf15280465273523" inlinks="pf15280465273520" path="recoveryPassword.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="home.xhtml" x="338" y="946" id="pf15280465273528" referenceLink="//@navigationRule.8/@navigationCase.0/@toViewId|" outlinks="pf15280465273524 pf152804753691215" inlinks="pf15280465273521 pf152804753691216" path="home.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="infoPlayer.xhtml" x="554" y="1148" id="pf15280465273529" referenceLink="//@navigationRule.7/@navigationCase.0/@toViewId|" outlinks="pf152804753691217" inlinks="pf152804753691215" path="infoPlayer.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="rankingPlayer.xhtml" x="122" y="471" id="pf152804654614212" referenceLink="//@navigationRule.8/@fromViewId|" path="home.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="rankingPlayer.xhtml" x="122" y="1148" id="pf152804753691218" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf152804753691216" inlinks="pf152804753691217" path="rankingPlayer.xhtml"/>
+  <links id="pf15279905794371" target="pf15279905794372" source="pf15279905794360" outcome="registrar" redirect="true"/>
+  <links id="pf15280465273520" target="pf15280465273527" source="pf15279905794360" outcome="recuperar" redirect="true"/>
+  <links id="pf15280465273521" target="pf15280465273528" source="pf15279905794360" outcome="entrar" redirect="true"/>
+  <links id="pf15280465273522" target="pf15279905794360" source="pf15279905794372" outcome="voltar" redirect="true"/>
+  <links id="pf15280465273523" target="pf15279905794360" source="pf15280465273527" outcome="voltar" redirect="true"/>
+  <links id="pf15280465273524" target="pf15279905794360" source="pf15280465273528" outcome="logout" redirect="true"/>
+  <links id="pf152804753691217" target="pf152804753691218" source="pf15280465273529" outcome="voltar" redirect="true"/>
+  <links id="pf152804753691215" target="pf15280465273529" source="pf15280465273528" outcome="verInfoPlayer" redirect="true"/>
+  <links id="pf152804753691216" target="pf15280465273528" source="pf152804753691218" outcome="voltar" redirect="true"/>
+</pageflow:Pageflow>
